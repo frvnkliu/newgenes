@@ -10,6 +10,11 @@ CREATE TABLE Person (
   created_at    TIMESTAMP  DEFAULT NOW()
 );
 
+CREATE TABLE COUPLE(
+  person_id1 REFERENCES Person(person_id),
+  person_id2 REFERENCES Person(person_id)
+)
+
 CREATE TABLE Gene (
   gene_id    SERIAL PRIMARY KEY,
   symbol     VARCHAR(20) UNIQUE NOT NULL,
